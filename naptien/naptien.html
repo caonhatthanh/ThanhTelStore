@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Cho Taoo</title>
+    <link rel="stylesheet" href="./naptien.css">
+    <script src="./thongbao.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/5c4072e6e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button style=" border: 1px solid gray; font-weight: bold; background-color: aquamarine; border-radius: 40px; margin-left: 46%;" class="d-flex  align-items-center justify-content-center" onclick="momodal()"><i class="fa-solid fa-bell"></i> Thông Báo <i class="fa-solid fa-bell"></i></button>
+
+    <!-- html modal -->
+    <div class="nenmodal" id="nenmodal-1">
+        <div class="nenmodal2"></div>
+        <div class="ndmodal">
+            <div class="closemodal"><button onclick="momodal()">×</button></div>
+            <div class="titlemodal">Trang Thu Thập Dữ Liệu</div>
+            Trang này là trang lấy thông tin, để Nhật Thanh biết mạnh thường quân nào đã Donate Trứng hay tên lửa cho Thanh
+        </div>
+    </div>
+    <!-- kết thúc html modal -->
+
+    <div class="form-basin">
+        <form>
+            <label style="color: white;" for="donorName">Tên nhà tài trợ:</label>
+            <input type="text" id="donorName" name="donorName" placeholder="Your Full Name">
+
+            <label style="color: white;" for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email">
+
+            <label style="color: white;" for="donationAmount">Số tiền quyên góp</label>
+            <input type="number" id="donationAmount" name="donationAmount" placeholder="Amount in VND" min="10000">
+
+            <label style="color: white;" for="message">Tin nhắn (Tùy chọn):</label>
+            <textarea id="message" name="message" placeholder="Leave a message"></textarea>
+
+            <div class="donation-type">
+                <span style="color: white;">Loại quyên góp:</span>
+                <label style="color: white;" for="oneTime">
+                    <input type="radio" id="oneTime" name="donationType" value="One Time" checked=""> Một lần
+                </label>
+                <label style="color: white;" for="recurring">
+                    <input type="radio" id="recurring" name="donationType" value="Recurring"> Định kỳ
+                </label>
+            </div>
+
+            <button type="submit"><a style="color: white; text-decoration: none;" href="./bank.html">Nạp Tiền Bố
+                    Thí</a></button>
+        </form>
+    </div>
+</body>
+
+</html>

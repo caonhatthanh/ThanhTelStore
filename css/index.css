@@ -1,0 +1,108 @@
+body {
+    background-color: lightgray;
+}
+
+.checkout {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: whitesmoke;
+    width: 600px;
+}
+
+.tensanpham {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.xemchitiet {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.xemchitiet a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.mota {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.giatien {
+    font-size: 22px;
+    color: #e10c00;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.discount {
+    background-color: #fff3cd;
+    padding: 10px;
+    border: 1px solid #ffeeba;
+}
+
+.quantity-control {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-control input {
+    text-align: center;
+    width: 50px;
+}
+
+.infokh {
+    font-size: 18px;
+}
+
+.chonmau {
+    background-color: whitesmoke;
+}
+
+.office {
+    text-decoration: none;
+}
+
+.loinhan {
+    height: 200px;
+}
+
+.luuy {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.hoadon {
+    font-weight: bold;
+}
+
+.tonggia {
+    color: red;
+    font-weight: bold;
+}
+
+.chinhsach {
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.thanhtoan {
+    width: 65%;
+    font-weight: bold;
+    border-radius: 60px;
+}
+
+.dieukhoan {
+    font-size: 11px;
+    margin-top: 15px;
+    text-align: center;
+}

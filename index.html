@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <title>ThanhTel - Store Sàn Giao Dịch Tiền Bẩn</title>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/5c4072e6e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container checkout">
+    <p>Có <b>1 sản phẩm</b> trong giỏ hàng</p>
+    <div class="row">
+      <div class="col-2">
+        <img src="./img/laptop.png" alt="laptop" class="img-fluid" />
+      </div>
+
+      <div class="col-7">
+        <a href="#" class="tensanpham">Laptop HP 15s fq5229TU i3 1215U/8GB/512GB/Win11 (8U237PA)</a>
+        <p class="xemchitiet">
+          Chọn 1 trong 2 khuyến mãi <a href="#">Xem chi tiết</a>
+        </p>
+        <p class="mota">Chọn 1 trong 2 khuyến mãi:</p>
+
+        <div>
+          <input type="radio" name="khuyenmai" id="giam500k" checked />
+          <label for="giam500k">Giảm giá 500,000đ</label>
+        </div>
+        <div>
+          <input type="radio" name="khuyenmai" id="office" />
+          <label for="office">Tặng kèm Office bản quyền 1 năm
+            <a class="office" href="#">Xem chi tiết</a></label>
+        </div>
+
+        <div class="discount mt-2">Giảm 500.000đ còn 9.990.000đ</div>
+
+        <div class="dropdown mt-3" style="background-color: whitesmoke">
+          <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Màu bạc
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Màu hồng</a></li>
+            <li><a class="dropdown-item" href="#">Màu Tím</a></li>
+            <li><a class="dropdown-item" href="#">Màu siêu nhân</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-3 text-end">
+        <p class="giatien">10.490.000đ</p>
+        <p class="old-price">13.690.000đ</p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-6">
+        <div class="quantity-control">
+          <button class="btn btn-outline-secondary" id="decrease">-</button>
+          <input type="text" class="form-control mx-2" id="quantity" value="1" readonly />
+          <button class="btn btn-outline-secondary" id="increase">+</button>
+        </div>
+      </div>
+      <div class="col-6 text-end">
+        <p>Tạm tính (3 sản phẩm): 67.970.000đ</p>
+      </div>
+    </div>
+    <hr />
+    <p class="infokh">THÔNG TIN KHÁCH HÀNG</p>
+    <div class="row">
+      <div class="col-2">
+        <input class="form-check-input" type="checkbox" name="gioitinh" value="nam" id="namgioi" />
+        <label class="form-check-label" for="flexRadioDefault1"> Nam </label>
+      </div>
+      <div class="col-2">
+        <input class="form-check-input" type="checkbox" name="gioitinh" value="nu" id="nugioi" />
+        <label class="form-check-label" for="flexRadioDefault2"> Nữ </label>
+      </div>
+    </div>
+    <div class="row mt-3 nhapthongtin">
+      <div class="col-6 mt-2">
+        <label for="hovaten">Họ Và Tên</label>
+        <input class="form-control" type="text" placeholder="Nguyễn Văn A" aria-label="default input example"
+          minlength="3" maxlength="30" id="hovaten" required />
+        <label class="mt-4" for="sdt">Số Điện Thoại</label>
+        <input class="form-control" id="sdt" type="text" placeholder="0123456789" aria-label="default input example"
+          maxlength="10" required />
+        <label class="mt-3" for="email">Email</label>
+        <input class="form-control" id="email" type="email" placeholder="nguyenvana@gmail.com"
+          aria-label="default input example" maxlength="10" required />
+        <p class="luuy"><i class="fa-solid fa-exclamation"></i> Vui lòng điền email để nhận thông tin chi tiết về đơn
+          hàng và hóa đơn VAT (nếu có)</p>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Lời Nhắn</label>
+          <textarea class="form-control loinhan" id="exampleFormControlTextarea1"
+            placeholder="Giao hàng sau khi tận thế." rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    <p class="ctgh mt-5">HÌNH THỨC NHẬN HÀNG</p>
+    <div class="row">
+      <div class="col-4 ghtn">
+        <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-house"></i> Giao hàng tận
+          nơi</button>
+      </div>
+      <div class="col-4 ntch">
+        <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-store"></i> Nhận tại cửa
+          hàng</button>
+      </div>
+    </div>
+    <div class="row mt-4 diadiem">
+      <div class="col-4">
+        <div class="dropdown" id="tinhtp">
+          <label for="tinhtp">Tỉnh/Thành Phố</label>
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Hồ Chí Minh
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Hà Nội</a></li>
+            <li><a class="dropdown-item" href="#">Lào Cai</a></li>
+            <li><a class="dropdown-item" href="#">Tây Ninh</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="quanhuyen">Quận/Huyện</label>
+        <div class="dropdown" id="quanhuyen">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Huyện Hóc Môn
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Quận 12</a></li>
+            <li><a class="dropdown-item" href="#">Huyện Nhà Bè</a></li>
+            <li><a class="dropdown-item" href="#">Thủ Đức</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="phuongxa">Phường/xã</label>
+        <div class="dropdown" id="phuongxa">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Xã Trung Chánh
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Xã Thới Tam Thôn</a></li>
+            <li><a class="dropdown-item" href="#">Xã Xuân Thới Thượng</a></li>
+            <li><a class="dropdown-item" href="#">Xã Tân Xuân</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <label for="diachinha">Địa Chỉ</label>
+        <input id="diachinha" class="form-control" type="text" placeholder="123 Đường số 5,Quận 12,Hồ Chí Minh"
+          aria-label="default input example">
+      </div>
+      <div class="row mt-2">
+        <div class="col-4">
+          <label class="form-check-label hoadon" for="flexRadioDefault1 hoadon"> Yêu cầu hóa đơn VAT </label>
+        </div>
+        <div class="col-2" style="margin-right: 40px;">
+          <input class="form-check-input" type="checkbox" name="hoadon" id="hoadon" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-3">
+          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-money-check"></i> Thanh toán online</button>
+        </div>
+        <div class="col-3">
+          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-building-columns"></i> Chuyển Khoản Ngân Hàng</button>
+        </div>
+        <div class="col-3">
+          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-hand-back-fist"></i> Thanh toán khi nhận hàng</button>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-5">
+          <p>Tổng Tiền (1 Sản phẩm):</p>
+        </div>
+        <div class="col-2 text-end">
+          <p class="tonggia">999.999.990đ</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-6 mt-3">
+          <p class="chinhsach">Chính sách hoàn tiền khi thanh toán</p>
+        </div>
+        <div class="col-6 text-end mt-2">
+          <button type="button" class="btn btn-danger thanhtoan"><a style="text-decoration: none; color: white;" href="./naptien/naptien.html">Thanh Toán</a></button>
+        </div>
+      </div>
+    </div>
+    <p class="dieukhoan">Bằng cách đặt hàng, bạn đồng ý với <b style="color: red;">Điều Khoản</b> Sử dụng của Viettel</p>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      let quantity = parseInt($("#quantity").val());
+
+      // nút -
+      $("#decrease").click(function () {
+        if (quantity > 1) {
+          quantity--;
+          $("#quantity").val(quantity);
+        }
+      });
+
+      // nút +
+      $("#increase").click(function () {
+        quantity++;
+        $("#quantity").val(quantity);
+      });
+    });
+  </script>
+</body>
+
+</html>
