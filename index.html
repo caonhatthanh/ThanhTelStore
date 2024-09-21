@@ -7,12 +7,16 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css" />
   <link rel="stylesheet" href="./css/index.css" />
   <title>ThanhTel - Store Sàn Giao Dịch Tiền Bẩn</title>
-  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/jquery-3.7.1.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/5c4072e6e7.js" crossorigin="anonymous"></script>
+  <script src="./js/icon.js"></script>
+  <script src="./js/select.js"></script>
 </head>
 
 <body>
+
+  <script src="./js/xylysanpham.js"></script>
+
   <div class="container checkout">
     <p>Có <b>1 sản phẩm</b> trong giỏ hàng</p>
     <div class="row">
@@ -60,9 +64,9 @@
     <div class="row mt-4">
       <div class="col-6">
         <div class="quantity-control">
-          <button class="btn btn-outline-secondary" id="decrease">-</button>
-          <input type="text" class="form-control mx-2" id="quantity" value="1" readonly />
-          <button class="btn btn-outline-secondary" id="increase">+</button>
+          <button class="btn btn-outline-secondary" id="nuttru">-</button>
+          <input type="text" class="form-control mx-2" id="giatri" value="1" readonly />
+          <button class="btn btn-outline-secondary" id="nutcong">+</button>
         </div>
       </div>
       <div class="col-6 text-end">
@@ -73,11 +77,13 @@
     <p class="infokh">THÔNG TIN KHÁCH HÀNG</p>
     <div class="row">
       <div class="col-2">
-        <input class="form-check-input" type="checkbox" name="gioitinh" value="nam" id="namgioi" />
+        <input style=" border-color: gray;" class="form-check-input" type="radio" checked="checked" name="gioitinh"
+          value="nam" id="namgioi" />
         <label class="form-check-label" for="flexRadioDefault1"> Nam </label>
       </div>
       <div class="col-2">
-        <input class="form-check-input" type="checkbox" name="gioitinh" value="nu" id="nugioi" />
+        <input style="border-color: gray;" class="form-check-input" type="radio" name="gioitinh" value="nu"
+          id="nugioi" />
         <label class="form-check-label" for="flexRadioDefault2"> Nữ </label>
       </div>
     </div>
@@ -162,23 +168,49 @@
         <input id="diachinha" class="form-control" type="text" placeholder="123 Đường số 5,Quận 12,Hồ Chí Minh"
           aria-label="default input example">
       </div>
-      <div class="row mt-2">
-        <div class="col-4">
-          <label class="form-check-label hoadon" for="flexRadioDefault1 hoadon"> Yêu cầu hóa đơn VAT </label>
+      <div class="clickychd">
+        <div class="row mt-2">
+          <div class="col-4">
+            <label class="form-check-label hoadon" for="flexRadioDefault1 hoadon"> Yêu cầu hóa đơn VAT </label>
+          </div>
+          <div class="col-2" style="margin-right: 40px;">
+            <input style="border-color: gray;" class="form-check-input" type="checkbox" name="hoadon" id="hoadon" />
+          </div>
         </div>
-        <div class="col-2" style="margin-right: 40px;">
-          <input class="form-check-input" type="checkbox" name="hoadon" id="hoadon" />
+        <div class="fadeychd">
+          <div class="row mt-3 mb-3">
+            <div class="col-6">
+              <label class="mb-1" for="tencty">Tên Công Ty</label>
+              <input id="tencty" class="form-control" type="text" placeholder="Nhập Tên Công Ty"
+                aria-label="default input example">
+            </div>
+            <div class="col-6">
+              <label class="mb-1" for="msthue">Mã số thuế</label>
+              <input id="msthue" class="form-control" type="text" placeholder="Mã Số Thuế"
+                aria-label="default input example">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12">
+              <label class="mb-1" for="diachi">Địa Chỉ</label>
+              <input id="diachi" class="form-control" type="text" placeholder="Nhập Địa Chỉ"
+                aria-label="default input example">
+            </div>
+          </div>
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-3">
-          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-money-check"></i> Thanh toán online</button>
+          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
+              class="fa-solid fa-money-check"></i> Thanh toán online</button>
         </div>
         <div class="col-3">
-          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-building-columns"></i> Chuyển Khoản Ngân Hàng</button>
+          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
+              class="fa-solid fa-building-columns"></i> Chuyển Khoản Ngân Hàng</button>
         </div>
         <div class="col-3">
-          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-hand-back-fist"></i> Thanh toán khi nhận hàng</button>
+          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
+              class="fa-solid fa-hand-back-fist"></i> Thanh toán khi nhận hàng</button>
         </div>
       </div>
       <div class="row mt-5">
@@ -196,32 +228,14 @@
           <p class="chinhsach">Chính sách hoàn tiền khi thanh toán</p>
         </div>
         <div class="col-6 text-end mt-2">
-          <button type="button" class="btn btn-danger thanhtoan"><a style="text-decoration: none; color: white;" href="./naptien/naptien.html">Thanh Toán</a></button>
+          <button type="button" class="btn btn-danger thanhtoan"><a style="text-decoration: none; color: white;"
+              href="./naptien/naptien.html">Thanh Toán</a></button>
         </div>
       </div>
     </div>
-    <p class="dieukhoan">Bằng cách đặt hàng, bạn đồng ý với <b style="color: red;">Điều Khoản</b> Sử dụng của Viettel</p>
+    <p class="dieukhoan">Bằng cách đặt hàng, bạn đồng ý với <b style="color: red;">Điều Khoản</b> Sử dụng của Viettel
+    </p>
   </div>
-
-  <script>
-    $(document).ready(function () {
-      let quantity = parseInt($("#quantity").val());
-
-      // nút -
-      $("#decrease").click(function () {
-        if (quantity > 1) {
-          quantity--;
-          $("#quantity").val(quantity);
-        }
-      });
-
-      // nút +
-      $("#increase").click(function () {
-        quantity++;
-        $("#quantity").val(quantity);
-      });
-    });
-  </script>
 </body>
 
 </html>
