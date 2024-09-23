@@ -108,9 +108,26 @@ body {
 }
 
 #namgioi {
-    border-radius: 4px;
+    border-radius: 3px; /* Tạo các cạnh vuông */
+    cursor: pointer;
 }
 
 #nugioi {
-    border-radius: 4px;
+    border-radius: 3px; /* Tạo các cạnh vuông */
+    cursor: pointer;
+}
+
+.chonmau {
+    color: #dc3545;
+    background-color: white;
+}
+
+.chonmau:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.chonmau option {
+    background: white;
+    color: #dc3545;
 }

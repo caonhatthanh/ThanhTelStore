@@ -8,3 +8,26 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$(document).ready(function () {
+    $('.diadiem').hide();
+    $('#ghtn').click(function () {
+        if ($('.diadiem').is(':visible')) {
+            $('.diadiem').fadeOut();
+        } else {
+            $('.diadiem').fadeIn();
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('.diachifade').hide();
+    $('#ghtn').click(function () {
+        if ($('.diachifade').is(':visible')) {
+            $('.diachifade').fadeOut();
+        } else {
+            $('.diachifade').fadeIn();
+        }
+    });
+});
