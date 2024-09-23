@@ -1,68 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggle Background and Dropdown</title>
+    <title>Thêm/Số lượng sản phẩm</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: white;
-            color: black;
-            border: 2px solid black;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .hidden {
-            display: none; /* Ẩn dropdown menu */
-        }
-
-        .drop-menu {
-            margin-top: 10px;
-            display: none; /* Bắt đầu ẩn dropdown */
-        }
-    </style>
 </head>
 <body>
-
-    <button class="button" id="button1">Button 1</button>
-    <button class="button" id="button2">Button 2</button>
-
-    <div class="drop-menu hidden">
-        <select>
-            <option value="hanoi">Hà Nội</option>
-            <option value="hochiminh">Hồ Chí Minh</option>
-            <option value="danang">Đà Nẵng</option>
-        </select>
+    <div>
+        <button id="minus">-</button>
+        <span id="quantity">1</span>
+        <button id="plus">+</button>
+    </div>
+    <div>
+        <p>Giá tiền: <span id="price">100000</span> VND</p>
     </div>
 
     <script>
-        $(document).ready(function () {
-            $(".button").click(function () {
-                // Xóa màu nền và ẩn dropdown menu cho các nút khác
-                $(".button").not(this).css("background-color", "white");
-                $(".drop-menu").fadeOut(200);
+        $(document).ready(function() {
+            var pricePerItem = 100000; // Giá mỗi sản phẩm
+            var quantity = 1;
 
-                if ($(this).css("background-color") === "rgb(255, 0, 0)") {
-                    // Nếu nút đã có màu đỏ, chuyển về màu trắng và ẩn dropdown
-                    $(this).css("background-color", "white");
-                } else {
-                    // Chuyển màu nền của nút đang được chọn sang đỏ
-                    $(this).css("background-color", "red");
-                    // Hiển thị dropdown menu
-                    $(".drop-menu").fadeIn(200);
+            function updatePrice() {
+                var totalPrice = quantity * pricePerItem;
+                $('#price').text(totalPrice);
+            }
+
+            $('#plus').click(function() {
+                quantity++;
+                $('#quantity').text(quantity);
+                updatePrice();
+            });
+
+            $('#minus').click(function() {
+                if (quantity > 1) {
+                    quantity--;
+                    $('#quantity').text(quantity);
+                    updatePrice();
                 }
             });
         });
     </script>
-
 </body>
 </html>
