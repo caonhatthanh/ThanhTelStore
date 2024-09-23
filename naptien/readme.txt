@@ -1,0 +1,1 @@
+Lưu ý ngoài cái bank.html ra thì tất cả những gì trong thư mục này là gom nhặt từ Internet về reup lại chứ không phải sản phẩm của riêng Mình.
