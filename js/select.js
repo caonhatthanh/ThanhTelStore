@@ -1,33 +1,11 @@
 $(document).ready(function () {
-    $('.fadeychd').hide();
-    $('#hoadon').change(function () {
-        if ($(this).is(':checked')) {
-            $('.fadeychd').fadeIn(250);
+    $('.fadeychd').hide(); //ẩn class
+    $('#hoadon').change(function (e) { //khi checkbox mang id hoadon có sự thay đổi
+        e.preventDefault();
+        if ($(this).is(':checked')) { // kiểm tra ở ngay chỗ vừa thay đổi xem check box đã được check chưa
+            $('.fadeychd').fadeIn(250); // nếu đã check thì sẽ xổ tùy chọn VAT xuống
         } else {
-            $('.fadeychd').fadeOut(205);
-        }
-    });
-});
-
-
-$(document).ready(function () {
-    $('.diadiem').hide();
-    $('#ghtn').click(function () {
-        if ($('.diadiem').is(':visible')) {
-            $('.diadiem').fadeOut();
-        } else {
-            $('.diadiem').fadeIn();
-        }
-    });
-});
-
-$(document).ready(function () {
-    $('.diachifade').hide();
-    $('#ghtn').click(function () {
-        if ($('.diachifade').is(':visible')) {
-            $('.diachifade').fadeOut();
-        } else {
-            $('.diachifade').fadeIn();
+            $('.fadeychd').fadeOut(205); //nếu chưa check,hoặc bỏ check thì sẽ đóng lại
         }
     });
 });

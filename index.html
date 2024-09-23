@@ -11,6 +11,7 @@
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/icon.js"></script>
   <script src="./js/select.js"></script>
+  <script src="./js/consolelog.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
   <script src="./js/xylysanpham.js"></script>
 
   <div class="container checkout">
-    <p>Có <b>1 sản phẩm</b> trong giỏ hàng</p>
+    <p>Có <b class="giatritong">1 </b><strong> sản phẩm</strong> trong giỏ hàng</p>
     <div class="row">
       <div class="col-2">
         <img src="./img/laptop.png" alt="laptop" class="img-fluid" />
@@ -53,7 +54,7 @@
       </div>
 
       <div class="col-3 text-end">
-        <p class="giatien"><strong class="chotgia">15.490.000</strong><b>đ</b></p>
+        <p class="giatien"><strong class="chotgia">15.490.000đ</strong></p>
         <p class="old-price">13.690.000đ</p>
       </div>
     </div>
@@ -67,7 +68,7 @@
         </div>
       </div>
       <div class="col-6 text-end">
-        <p>Tạm tính (<b class="giatritong">1</b> sản phẩm): <strong id="tonggia">15.490.000</strong><b>đ</b></p>
+        <p>Tạm tính (<b class="giatritong">1</b> sản phẩm): <strong id="tonggia">15.490.000 đ</strong></p>
       </div>
     </div>
     <hr />
@@ -94,7 +95,7 @@
           maxlength="10" required />
         <label class="mt-3" for="email">Email</label>
         <input class="form-control" id="email" type="email" placeholder="nguyenvana@gmail.com"
-          aria-label="default input example" maxlength="10" required />
+          aria-label="default input example" minlength="10" required />
         <p class="luuy"><i class="fa-solid fa-exclamation"></i> Vui lòng điền email để nhận thông tin chi tiết về đơn
           hàng và hóa đơn VAT (nếu có)</p>
       </div>
@@ -109,12 +110,18 @@
     <p class="ctgh mt-5">HÌNH THỨC NHẬN HÀNG</p>
     <div class="row">
       <div class="col-4" id="ghtn">
-        <button type="button" class="btn btn-outline-danger ghtn"><i class="fa-solid fa-house"></i> Giao hàng tận
-          nơi</button>
+        <!-- <button type="button" class="btn btn-outline-danger ghtn"><i class="fa-solid fa-house"></i> Giao hàng tận
+          nơi</button> -->
+        <input type="radio" class="btn-check" name="hinhthuc" id="giaohangtannoi" checked>
+        <label class="btn btn-outline-danger" for="giaohangtannoi"><i class="fa-solid fa-house"></i> Giao hàng tận
+          nơi</label>
       </div>
       <div class="col-4 ntch">
-        <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-store"></i> Nhận tại cửa
-          hàng</button>
+        <!-- <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-store"></i> Nhận tại cửa
+          hàng</button> -->
+        <input type="radio" class="btn-check" name="hinhthuc" id="nhantaicuahang">
+        <label class="btn btn-outline-danger" for="nhantaicuahang"><i class="fa-solid fa-store"></i> Nhận tại cửa
+          hàng</label>
       </div>
     </div>
     <div>
@@ -192,16 +199,25 @@
       </div>
       <div class="row mt-3">
         <div class="col-3">
-          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
-              class="fa-solid fa-money-check"></i> Thanh toán online</button>
+          <!-- <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
+              class="fa-solid fa-money-check"></i> Thanh toán online</button> -->
+          <input type="radio" class="btn-check" name="thanhtoan" id="online">
+          <label class="btn btn-outline-danger" for="online"><i class="fa-solid fa-money-check"></i> Thanh toán
+            online</label>
         </div>
         <div class="col-3">
-          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
-              class="fa-solid fa-building-columns"></i> Chuyển Khoản Ngân Hàng</button>
+          <!-- <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
+              class="fa-solid fa-building-columns"></i> Chuyển Khoản Ngân Hàng</button> -->
+          <input type="radio" class="btn-check" name="thanhtoan" id="nganhang">
+          <label class="btn btn-outline-danger" for="nganhang"><i class="fa-solid fa-building-columns"></i> Chuyển Khoản
+            Ngân Hàng</label>
         </div>
         <div class="col-3">
-          <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
-              class="fa-solid fa-hand-back-fist"></i> Thanh toán khi nhận hàng</button>
+          <!-- <button style="font-size: 14px;" type="button" class="btn btn-outline-danger"><i
+              class="fa-solid fa-hand-back-fist"></i> Thanh toán khi nhận hàng</button> -->
+          <input type="radio" class="btn-check" name="thanhtoan" id="home">
+          <label class="btn btn-outline-danger" for="home"><i class="fa-solid fa-hand-back-fist"></i> Thanh toán khi
+            nhận hàng</label>
         </div>
       </div>
       <div class="row mt-5">
@@ -210,7 +226,7 @@
           <p>Tổng Tiền (<b class="giatritong">1</b> Sản phẩm):</p>
         </div>
         <div class="col-2 text-end">
-          <p><strong class="chotgia">15.490.000</strong><b>đ</b></p>
+          <p><strong class="chotgia">15.490.000đ</strong></p>
         </div>
       </div>
       <hr>
@@ -219,12 +235,11 @@
           <p class="chinhsach">Chính sách hoàn tiền khi thanh toán</p>
         </div>
         <div class="col-6 text-end mt-2">
-          <button type="button" class="btn btn-danger thanhtoan"><a style="text-decoration: none; color: white;"
-              href="./naptien/naptien.html">Thanh Toán</a></button>
+              <button type="button" class="btn btn-danger thanhtoan" id="thanhtoanBtn">Thanh Toán</button>
         </div>
       </div>
     </div>
-    <p class="dieukhoan">Bằng cách đặt hàng, bạn đồng ý với <b style="color: red;">Điều Khoản</b> Sử dụng của Viettel
+    <p class="dieukhoan">Bằng cách đặt hàng, bạn đồng ý với <a style="color: red;" href="./naptien/naptien.html">Điều Khoản</a> Sử dụng của Viettel
     </p>
   </div>
 </body>
